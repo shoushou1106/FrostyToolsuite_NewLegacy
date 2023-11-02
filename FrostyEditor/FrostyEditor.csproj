@@ -6,35 +6,60 @@
     <IsPackable>False</IsPackable>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <ApplicationIcon>Assets\AppIcon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Assets\*" />
+    <None Remove="Assets\Profiles\Icons\*" />
+    <None Remove="Assets\Profiles\Banners\*" />
     <None Update="Profiles\*.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>
     <AvaloniaResource Include="Assets\*" />
+    <AvaloniaResource Include="Assets\Profiles\Icons\*" />
+    <AvaloniaResource Include="Assets\Profiles\Banners\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\AppIcon.ico" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.0.0" />
-    <PackageReference Include="Avalonia.Controls.TreeDataGrid" Version="11.0.1" />
+    <PackageReference Include="Avalonia.Controls.TreeDataGrid" Version="11.0.0" />
     <PackageReference Include="Avalonia.Desktop" Version="11.0.0" />
     <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.0" />
+    <PackageReference Include="Avalonia.Svg" Version="11.0.0.1" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.0" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
     <PackageReference Include="Dock.Avalonia" Version="11.0.0" />
     <PackageReference Include="Dock.Model" Version="11.0.0" />
     <PackageReference Include="Dock.Model.Mvvm" Version="11.0.0" />
     <PackageReference Include="Dock.Serializer" Version="11.0.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.7.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.7.0" />
-    <PackageReference Include="Microsoft.CodeAnalysis.Scripting.Common" Version="4.7.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.6.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.6.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Scripting.Common" Version="4.6.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\FrostySdk\FrostySdk.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Pages\WelcomeWindow\ProfilesPage.axaml.cs">
+      <DependentUpon>ProfilesPage.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\WelcomeWindow\ProjectsPage.axaml.cs">
+      <DependentUpon>ProjectsPage.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Themes\UserControls\TitleBar.axaml.cs">
+      <DependentUpon>TitleBar.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Windows\WelcomeWindow.axaml.cs">
+      <DependentUpon>WelcomeWindow.axaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

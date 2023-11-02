@@ -1,0 +1,69 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:FrostyEditor.ViewModels.Windows"
+		xmlns:ctrls="clr-namespace:FrostyEditor.Themes.UserControls;assembly=FrostyEditor"
+		xmlns:pages="clr-namespace:FrostyEditor.Pages.WelcomeWindow;assembly=FrostyEditor"
+        mc:Ignorable="d"
+        Width="1000" Height="600"
+        x:Class="FrostyEditor.Views.Windows.WelcomeWindow"
+		Icon="..\..\Assets\AppIcon.ico"
+        Title="{StaticResource ID_GENERAL_APP_NAME}"
+        x:DataType="vm:WelcomeWindowViewModel"
+        x:CompileBindings="True"
+        UseLayoutRounding="True" RenderOptions.BitmapInterpolationMode="HighQuality"
+        WindowState="Normal" WindowStartupLocation="CenterScreen"
+        Foreground="{DynamicResource DockThemeForegroundBrush}"
+		Background="{x:Null}"
+        BorderThickness="1" BorderBrush="{DynamicResource DockThemeBorderLowBrush}"
+        ExtendClientAreaToDecorationsHint="True"
+        ExtendClientAreaChromeHints="PreferSystemChrome"
+        ExtendClientAreaTitleBarHeightHint="-1"
+        >
+    <Design.DataContext>
+		<vm:WelcomeWindowViewModel />
+    </Design.DataContext>
+	
+	<Window.Styles>
+		<Style Selector="Window[WindowState=Maximized]">
+			<Setter Property="Padding" Value="6" />
+		</Style>
+	</Window.Styles>
+	
+	<Panel>
+		<Border IsHitTestVisible="False" Background="#111111"/>
+		<Grid RowDefinitions="Auto, *">
+			<ctrls:TitleBar Grid.Row="0" Description="{StaticResource ID_WELCOME_TITLE}"/>
+			<TabControl Grid.Row="1" TabStripPlacement="Left" SelectedIndex="1" Padding="0, 0, 0, 0">
+				<TabItem IsEnabled="False">
+					<TabItem.Header>
+						<Grid Margin="-5, 0, 0, 0" RowDefinitions="15, 15" ColumnDefinitions="25, *">
+							<Image Grid.RowSpan="2" Grid.Column="0" Source="{SvgImage ../../Assets/FrostyLogo.svg}" Margin="5, 5, 10, 5" Width="25" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+							<TextBlock Grid.Row="0" Grid.Column="1" Text="{StaticResource ID_GENERAL_APP_NAME}" HorizontalAlignment="Left" FontWeight="Bold" Foreground="White" FontSize="12"/>
+							<TextBlock Grid.Row="1" Grid.Column="1" Text="TODO: App Version" HorizontalAlignment="Left" FontWeight="Bold" FontSize="12"/>
+						</Grid>
+					</TabItem.Header>
+				</TabItem>
+				<TabItem>
+					<TabItem.Header>
+						<TextBlock HorizontalAlignment="Right" Text="{StaticResource ID_WELCOME_PROJECTS}" FontSize="20"/>
+					</TabItem.Header>
+					<Grid>
+						<Border IsHitTestVisible="False" Background="#222222" Margin="0, 0, -15, 0"/>
+						<pages:ProjectsPage/>
+					</Grid>
+				</TabItem>
+				<TabItem>
+					<TabItem.Header>
+						<TextBlock HorizontalAlignment="Right" Text="{StaticResource ID_WELCOME_PROFILES}" FontSize="20"/>
+					</TabItem.Header>
+					<Grid>
+						<Border IsHitTestVisible="False" Background="#222222" Margin="0, 0, -15, 0"/>
+						<pages:ProfilesPage/>
+					</Grid>
+				</TabItem>
+			</TabControl>
+		</Grid>
+	</Panel>
+</Window>
