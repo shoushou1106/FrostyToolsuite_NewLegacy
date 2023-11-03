@@ -1,9 +1,8 @@
-﻿using System;
+using System;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using FrostyEditor.Interfaces;
-using FrostyEditor.Themes;
+using Avalonia.ThemeManager;
 using FrostyEditor.Utils;
 using FrostyEditor.ViewModels;
 using FrostyEditor.ViewModels.Windows;
@@ -20,7 +19,7 @@ public class App : Application
     
     public override void Initialize()
     {
-        ThemeManager = new FluentThemeManager();
+        ThemeManager = new FrostyPlugin.Themes.DefaultTheme.DefaultThemeManager();
         ThemeManager.Initialize(this);
         
         Config.Load(ConfigPath);

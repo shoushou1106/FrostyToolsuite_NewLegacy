@@ -1,35 +1,36 @@
-﻿using System;
+using System;
 using Avalonia;
 using Avalonia.Markup.Xaml.Styling;
 using Avalonia.Styling;
+using Avalonia.ThemeManager;
 using Avalonia.Themes.Fluent;
-using FrostyEditor.Interfaces;
+using FrostyPlugin.Themes.DefaultTheme.Styles;
 
-namespace FrostyEditor.Themes;
+namespace FrostyPlugin.Themes.DefaultTheme;
 
-public class FluentThemeManager : IThemeManager
+public class DefaultThemeManager : IThemeManager
 {
     private static readonly Uri s_baseUri = new("avares://FrostyEditor/Styles");
 
     private static readonly FluentTheme s_fluent = new();
 
-    private static readonly DockFluentTheme s_dockFluent = new();
+    private static readonly DockTheme s_dockFluent = new();
 
-    private static readonly TreeDataGridFluentTheme s_treeDataGridFluent = new();
+    private static readonly TreeDataGridTheme s_treeDataGridFluent = new();
 
-    private static readonly Styles s_fluentDark = new()
+    private static readonly Avalonia.Styling.Styles s_fluentDark = new()
     {
         new StyleInclude(s_baseUri)
         {
-            Source = new Uri("avares://FrostyEditor/Themes/FluentDark.axaml")
+            Source = new Uri("avares://FrostyPlugin/Themes/DefaultTheme/Styles/Dark.axaml")
         }
     };
 
-    private static readonly Styles s_fluentLight = new()
+    private static readonly Avalonia.Styling.Styles s_fluentLight = new()
     {
         new StyleInclude(s_baseUri)
         {
-            Source = new Uri("avares://FrostyEditor/Themes/FluentLight.axaml")
+            Source = new Uri("avares://FrostyPlugin/Themes/DefaultTheme/Styles/Light.axaml")
         }
     };
 
