@@ -19,7 +19,8 @@ public class App : Application
     
     public override void Initialize()
     {
-        ThemeManager = new FrostyPlugin.Themes.DefaultTheme.DefaultThemeManager();
+        //ThemeManager = new FrostyPlugin.Themes.DefaultTheme.DefaultThemeManager();
+        ThemeManager = new FluentThemeManager();
         ThemeManager.Initialize(this);
         
         Config.Load(ConfigPath);

@@ -10,15 +10,15 @@ namespace FrostyPlugin.Themes.DefaultTheme;
 
 public class DefaultThemeManager : IThemeManager
 {
-    private static readonly Uri s_baseUri = new("avares://FrostyEditor/Styles");
+    private static readonly Uri s_baseUri = new("avares://FrostyPlugin/Themes/DefaultTheme/");
 
-    private static readonly FluentTheme s_fluent = new();
+    private static readonly FluentTheme s_theme = new();
 
-    private static readonly DockTheme s_dockFluent = new();
+    private static readonly DockTheme s_dock = new();
 
-    private static readonly TreeDataGridTheme s_treeDataGridFluent = new();
+    private static readonly TreeDataGridTheme s_treeDataGrid = new();
 
-    private static readonly Avalonia.Styling.Styles s_fluentDark = new()
+    private static readonly Avalonia.Styling.Styles s_dark = new()
     {
         new StyleInclude(s_baseUri)
         {
@@ -26,7 +26,7 @@ public class DefaultThemeManager : IThemeManager
         }
     };
 
-    private static readonly Avalonia.Styling.Styles s_fluentLight = new()
+    private static readonly Avalonia.Styling.Styles s_light = new()
     {
         new StyleInclude(s_baseUri)
         {
@@ -43,24 +43,24 @@ public class DefaultThemeManager : IThemeManager
 
         switch (index)
         {
-            // Fluent Light
+            // Light
             case 0:
             {
                 Application.Current.RequestedThemeVariant = ThemeVariant.Light;
-                Application.Current.Styles[0] = s_fluent;
-                Application.Current.Styles[1] = s_dockFluent;
-                Application.Current.Styles[2] = s_treeDataGridFluent;
-                Application.Current.Styles[3] = s_fluentLight;
+                Application.Current.Styles[0] = s_theme;
+                Application.Current.Styles[1] = s_dock;
+                Application.Current.Styles[2] = s_treeDataGrid;
+                Application.Current.Styles[3] = s_light;
                 break;
             }
-            // Fluent Dark
+            // Dark
             case 1:
             {
                 Application.Current.RequestedThemeVariant = ThemeVariant.Dark;
-                Application.Current.Styles[0] = s_fluent;
-                Application.Current.Styles[1] = s_dockFluent;
-                Application.Current.Styles[2] = s_treeDataGridFluent;
-                Application.Current.Styles[3] = s_fluentDark;
+                Application.Current.Styles[0] = s_theme;
+                Application.Current.Styles[1] = s_dock;
+                Application.Current.Styles[2] = s_treeDataGrid;
+                Application.Current.Styles[3] = s_dark;
                 break;
             }
         }
@@ -69,9 +69,9 @@ public class DefaultThemeManager : IThemeManager
     public void Initialize(Application application)
     {
         application.RequestedThemeVariant = ThemeVariant.Dark;
-        application.Styles.Insert(0, s_fluent);
-        application.Styles.Insert(1, s_dockFluent);
-        application.Styles.Insert(2, s_treeDataGridFluent);
-        application.Styles.Insert(3, s_fluentDark);
+        application.Styles.Insert(0, s_theme);
+        application.Styles.Insert(1, s_dock);
+        application.Styles.Insert(2, s_treeDataGrid);
+        application.Styles.Insert(3, s_dark);
     }
 }
