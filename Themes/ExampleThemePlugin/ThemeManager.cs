@@ -1,16 +1,15 @@
-using System;
 using Avalonia;
 using Avalonia.Markup.Xaml.Styling;
 using Avalonia.Styling;
 using Avalonia.ThemeManager;
 using Avalonia.Themes.Fluent;
-using FrostyPlugin.Themes.DefaultTheme.Styles;
+using ExampleThemePlugin.Styles;
 
-namespace FrostyPlugin.Themes.DefaultTheme;
+namespace ExampleThemePlugin;
 
-public class DefaultThemeManager : IThemeManager
+public class ThemeManager : IThemeManager
 {
-    private static readonly Uri s_baseUri = new("avares://FrostyPlugin/Themes/DefaultTheme/");
+    private static readonly Uri s_baseUri = new("avares://ExampleThemePlugin/");
 
     private static readonly FluentTheme s_theme = new();
 
@@ -22,7 +21,7 @@ public class DefaultThemeManager : IThemeManager
     {
         new StyleInclude(s_baseUri)
         {
-            Source = new Uri("avares://FrostyPlugin/Themes/DefaultTheme/Styles/Dark.axaml")
+            Source = new Uri("avares://ExampleThemePlugin/Styles/Dark.axaml")
         }
     };
 
@@ -30,7 +29,7 @@ public class DefaultThemeManager : IThemeManager
     {
         new StyleInclude(s_baseUri)
         {
-            Source = new Uri("avares://FrostyPlugin/Themes/DefaultTheme/Styles/Light.axaml")
+            Source = new Uri("avares://ExampleThemePlugin/Styles/Light.axaml")
         }
     };
 

@@ -304,20 +304,33 @@ public static class Config
     }
 
     /// <summary>
-    /// Adds or modifies the specified option in the <see cref="Config"/>.
+    /// Get the specified option in the <see cref="Config"/>.
     /// </summary>
     /// <param name="option">The key of the option in the <see cref="Config"/> to add or modify.</param>
     /// <param name="defaultValue">The default value of the option, if not found in the <see cref="Config"/>.</param>
     /// <param name="scope">The <see cref="ConfigScope"/> of the option.</param>
     /// <param name="profile">The profile the option belongs to. If null, the currently active profile will be used.</param>
     
-    public static T Get<T>(string option, T defaultValue, ConfigScope scope = ConfigScope.Global, string? profile = null)
+    public static object? Get(string option, ConfigScope scope = ConfigScope.Global, string? profile = null)
     {
         s_current ??= new InternalConfig();
-        
-        return s_current.TryGetValue(option, scope, profile ?? ProfilesLibrary.ProfileName, out object? value) ? (T?)Convert.ChangeType(value, typeof(T)) ?? defaultValue : defaultValue;
+        s_current.TryGetValue(option, scope, profile ?? ProfilesLibrary.ProfileName, out object? value);
+
+        return value;
     }
 
+    /// <summary>
+    /// Determines whether the <see cref="Config"/> contains the specified key.
+    /// </summary>
+    /// <param name="option">The option key to locate in the <see cref="Config"/>.</param>
+    /// <param name="scope"></param>
+    /// <param name="profile"></param>
+    public static bool Contains(string option, ConfigScope scope = ConfigScope.Global, string? profile = null)
+    {
+        s_current ??= new InternalConfig();
+
+        return s_current.Contains(option, scope, profile);
+    }
 
     // upgrades ini configs to unified json
     // public static void UpgradeConfigs()

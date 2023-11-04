@@ -14,6 +14,8 @@ public interface IFrostyTheme
 
     string Name { get; }
 
+    string Version { get; }
+
     string? Author { get; }
 
     object? Icon { get; }

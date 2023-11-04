@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.7.34031.279
-MinimumVisualStudioVersion = 10.0.40219.1
+
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrostyCmd", "FrostyCmd\FrostyCmd.csproj", "{990663D6-619A-46C3-ADFA-68208FF24465}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrostySdk", "FrostySdk\FrostySdk.csproj", "{8A2EBD94-9430-4F02-9FEA-7EC0B182A10F}"
@@ -27,7 +25,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrostyTypeSdkGenerator", "F
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrostyTypeSdkGenerator.Example", "FrostyTypeSdkGenerator\FrostyTypeSdkGenerator.Example\FrostyTypeSdkGenerator.Example.csproj", "{447CC684-05A6-49FE-821D-A0BF0602614C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrostyPlugin", "FrostyPlugin\FrostyPlugin.csproj", "{98D5552B-6A7A-497B-91E2-4853B11A4CBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrostyPlugin", "FrostyPlugin\FrostyPlugin.csproj", "{98D5552B-6A7A-497B-91E2-4853B11A4CBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Themes", "Themes", "{13F1C22B-3F7D-48F2-B3DA-B0391C6C662E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExampleThemePlugin", "Themes\ExampleThemePlugin\ExampleThemePlugin.csproj", "{A562534A-54D7-45F2-B627-5B5A3BEDFB77}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +69,10 @@ Global
 		{98D5552B-6A7A-497B-91E2-4853B11A4CBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98D5552B-6A7A-497B-91E2-4853B11A4CBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98D5552B-6A7A-497B-91E2-4853B11A4CBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A562534A-54D7-45F2-B627-5B5A3BEDFB77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A562534A-54D7-45F2-B627-5B5A3BEDFB77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A562534A-54D7-45F2-B627-5B5A3BEDFB77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A562534A-54D7-45F2-B627-5B5A3BEDFB77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -74,6 +80,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{8679D294-9AA1-49A1-A769-AEFCF1C6CAA9} = {0E902CC4-FFE0-4614-8C37-4256C3D3F13D}
 		{447CC684-05A6-49FE-821D-A0BF0602614C} = {0E902CC4-FFE0-4614-8C37-4256C3D3F13D}
+		{A562534A-54D7-45F2-B627-5B5A3BEDFB77} = {13F1C22B-3F7D-48F2-B3DA-B0391C6C662E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CD7CC416-1C94-4639-BC88-94486B139B12}

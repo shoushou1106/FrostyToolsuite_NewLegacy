@@ -29,7 +29,7 @@ public partial class ProfileSelectWindowViewModel : ObservableObject
         public ProfileConfig(string inKey)
         {
             Key = inKey;
-            Path = Config.Get("GamePath", string.Empty, ConfigScope.Game, Key);
+            Path = Config.Get("GamePath", ConfigScope.Game, Key)?.ToString() ?? string.Empty;
             Name = ProfilesLibrary.GetDisplayName(Key) ?? Key;
         }
     }

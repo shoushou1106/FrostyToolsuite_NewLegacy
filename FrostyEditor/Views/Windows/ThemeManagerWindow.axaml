@@ -5,5 +5,14 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="FrostyEditor.Views.Windows.ThemeManagerWindow"
         Title="ThemeManagerWindow">
-  
+  <Panel>
+    <Grid Background="{DynamicResource AcrylicFallbackColor}">
+      <DataGrid AutoGenerateColumns="False">
+        <DataGrid.Columns>
+          <DataGridTextColumn Header="Name"/>
+          <DataGridTextColumn Header="Author"/>
+        </DataGrid.Columns>
+      </DataGrid>
+    </Grid>
+  </Panel>
 </Window>

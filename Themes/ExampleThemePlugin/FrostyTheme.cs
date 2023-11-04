@@ -1,23 +1,22 @@
 using Avalonia.ThemeManager;
+using FrostyPlugin.Themes;
 using System.Runtime.InteropServices;
 
-namespace FrostyPlugin.Themes.DefaultTheme;
+namespace ExampleThemePlugin;
 
 public class FrostyTheme : IFrostyTheme
 {
     public IThemeManager ThemeManager { get => new ThemeManager(); }
 
-    public string Name { get => "Default Theme"; }
+    public string Name { get => "Example Theme"; }
 
-    public string Version { get => "1.0.0"; }
-
-    public string? Author { get => "Frosty"; }
+    public string? Author { get => "shoushou1106"; }
 
     public object? Icon { get; }
 
     public List<object>? Screenshots { get; }
 
-    public string? Description { get => "Default Theme for Frosty"; }
+    public string? Description { get => "Example"; }
 
     public List<string>? Links { get; }
 

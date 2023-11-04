@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
@@ -15,16 +17,25 @@ public class App : Application
 {
     public static string ConfigPath =
         $"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}/Frosty/editor_config.json";
-    
-    public static IFrostyTheme s_theme = new FrostyPlugin.Themes.DefaultTheme.FrostyTheme();
-    public static IThemeManager s_themeManager = s_theme.ThemeManager;
 
     public override void Initialize()
     {
-        s_themeManager.Initialize(this);
-        
         Config.Load(ConfigPath);
 
+        if (!Config.Contains("ThemePath"))
+        {
+            Config.Add("ThemePath", Path.GetFullPath($"{Directory.GetCurrentDirectory()}\\Themes\\"));
+            Config.Save(ConfigPath);
+        }
+        string themePath = Config.Get("ThemePath")?.ToString() ?? Path.GetFullPath($"{Directory.GetCurrentDirectory()}\\Themes\\");
+        if (!Path.Exists(themePath))
+        {
+            Directory.CreateDirectory(themePath);
+        }
+        ThemeLibrary.Initialize(themePath);
+
+        ThemeLibrary.FrostyTheme = ThemeLibrary.FrostyThemes["ExampleThemePlugin"];
+        ThemeLibrary.FrostyTheme.ThemeManager.Initialize(this);
         AvaloniaXamlLoader.Load(this);
     }
 
