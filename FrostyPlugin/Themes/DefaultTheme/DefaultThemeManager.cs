@@ -43,6 +43,16 @@ public class DefaultThemeManager : IThemeManager
 
         switch (index)
         {
+            // Default Dark
+            default:
+            {
+                Application.Current.RequestedThemeVariant = ThemeVariant.Dark;
+                Application.Current.Styles[0] = s_theme;
+                Application.Current.Styles[1] = s_dock;
+                Application.Current.Styles[2] = s_treeDataGrid;
+                Application.Current.Styles[3] = s_dark;
+                break;
+            }
             // Light
             case 0:
             {

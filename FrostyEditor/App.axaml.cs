@@ -7,6 +7,7 @@ using FrostyEditor.Utils;
 using FrostyEditor.ViewModels;
 using FrostyEditor.ViewModels.Windows;
 using FrostyEditor.Views.Windows;
+using FrostyPlugin.Themes;
 
 namespace FrostyEditor;
 
@@ -15,13 +16,12 @@ public class App : Application
     public static string ConfigPath =
         $"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}/Frosty/editor_config.json";
     
-    public static IThemeManager? ThemeManager;
-    
+    public static IFrostyTheme s_theme = new FrostyPlugin.Themes.DefaultTheme.FrostyTheme();
+    public static IThemeManager s_themeManager = s_theme.ThemeManager;
+
     public override void Initialize()
     {
-        //ThemeManager = new FrostyPlugin.Themes.DefaultTheme.DefaultThemeManager();
-        ThemeManager = new FluentThemeManager();
-        ThemeManager.Initialize(this);
+        s_themeManager.Initialize(this);
         
         Config.Load(ConfigPath);
 

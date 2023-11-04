@@ -1,4 +1,4 @@
-﻿<Window x:Class="FrostyEditor.Views.MainWindow"
+<Window x:Class="FrostyEditor.Views.MainWindow"
         xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -17,11 +17,10 @@
         TransparencyLevelHint="AcrylicBlur"
         Foreground="{DynamicResource DockThemeForegroundBrush}"
         BorderThickness="1" BorderBrush="{DynamicResource DockThemeBorderLowBrush}"
-        FontFamily="Segoe UI, SF Pro Display, Noto Sans, Cantarel"
         Title="FrostyEditor" Height="600" Width="900"
         ExtendClientAreaToDecorationsHint="True"
         ExtendClientAreaChromeHints="PreferSystemChrome"
-        id:DockProperties.IsDragEnabled="True" id:DockProperties.IsDropEnabled="True">
+        >
   <Design.DataContext>
     <vm:MainWindowViewModel />
   </Design.DataContext>
