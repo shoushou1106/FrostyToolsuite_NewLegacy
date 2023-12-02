@@ -30,6 +30,8 @@ public interface IFrostyTheme
     /// Set to null means support all platforms
     /// </summary>
     List<OSPlatform>? SupportPlatforms { get; }
+    string SupportFrosty { get; }
+    string SupportFrostyVersion { get; }
 
     Dictionary<string, string> XamlOverrides { get; }
 }

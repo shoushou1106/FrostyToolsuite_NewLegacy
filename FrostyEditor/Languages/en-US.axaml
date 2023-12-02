@@ -5,8 +5,9 @@
     <system:String x:Key="ID_MENU_FILE">File</system:String>
     <system:String x:Key="ID_MENU_TOOLS">Tools</system:String>
     <system:String x:Key="ID_MENU_HELP">Help</system:String>
-    
-    <!-- ProfileSelectWindow -->
+  <system:String x:Key="ID_MENU_SETTINGS">Settings</system:String>
+
+  <!-- ProfileSelectWindow -->
     <system:String x:Key="ID_PROFILE_SELECT">Select</system:String>
     <system:String x:Key="ID_PROFILE_ADD">Add</system:String>
     <system:String x:Key="ID_PROFILE_CANCEL">Cancel</system:String>

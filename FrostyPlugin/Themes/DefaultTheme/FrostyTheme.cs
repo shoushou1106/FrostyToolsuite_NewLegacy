@@ -22,6 +22,8 @@ public class FrostyTheme : IFrostyTheme
     public List<string>? Links { get; }
 
     public List<OSPlatform>? SupportPlatforms { get; }
+    public string SupportFrosty { get => "*"; }
+    public string SupportFrostyVersion { get => "*"; }
 
     public Dictionary<string, string> XamlOverrides { get => XamlOverride.GetXamlOverride(); }
 }

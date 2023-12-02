@@ -2,6 +2,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using FrostyPlugin.Themes;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -32,6 +33,18 @@ public partial class ThemeManagerWindowViewModel : ObservableObject
             Name = frostyTheme.Name;
             Version = frostyTheme.Version;
             Author = frostyTheme.Author;
+            Description = frostyTheme.Description;
+        }
+    }
+
+    public ObservableCollection<ThemeItem> ThemeItems { get; set; } = new();
+
+    public ThemeManagerWindowViewModel()
+    {
+        foreach (IFrostyTheme frostyTheme in ThemeLibrary.FrostyThemes.Values)
+        {
+            ThemeItems = new();
+            ThemeItems.Add(new ThemeItem(frostyTheme));
         }
     }
 }

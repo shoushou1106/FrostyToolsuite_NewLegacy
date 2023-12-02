@@ -34,7 +34,6 @@ public class App : Application
         }
         ThemeLibrary.Initialize(themePath);
 
-        ThemeLibrary.FrostyTheme = ThemeLibrary.FrostyThemes["ExampleThemePlugin"];
         ThemeLibrary.FrostyTheme.ThemeManager.Initialize(this);
         AvaloniaXamlLoader.Load(this);
     }
