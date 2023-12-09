@@ -3,6 +3,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:FrostyEditor.ViewModels.Windows"
+        xmlns:pages="clr-namespace:FrostyEditor.Views.Pages.Windows.ThemeManagerWindow"
+        xmlns:fluentAvalonia="using:FluentAvalonia.UI.Controls"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="FrostyEditor.Views.Windows.ThemeManagerWindow"
         x:DataType="vm:ThemeManagerWindowViewModel"
@@ -12,11 +14,15 @@
   </Design.DataContext>
   <Panel>
     <Grid Background="{DynamicResource AcrylicFallbackColor}">
-      <ItemsRepeater ItemsSource="{Binding ThemeItems}">
-        <ItemsRepeater.ItemTemplate>
-          
-        </ItemsRepeater.ItemTemplate>
-      </ItemsRepeater>
+      <TabControl>
+        <!-- Library -->
+        <TabItem Header="Library">
+          <fluentAvalonia:Frame x:Name="LibraryFrame" />
+        </TabItem>
+        <TabItem Header="Browse">
+          <Label Content="TODO, maybe connect to github"/>
+        </TabItem>
+      </TabControl>
     </Grid>
   </Panel>
 </Window>
