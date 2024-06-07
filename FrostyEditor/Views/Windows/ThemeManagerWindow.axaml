@@ -12,17 +12,14 @@
   <Design.DataContext>
     <vm:ThemeManagerWindowViewModel />
   </Design.DataContext>
-  <Panel>
-    <Grid Background="{DynamicResource AcrylicFallbackColor}">
-      <TabControl>
-        <!-- Library -->
-        <TabItem Header="Library">
-          <fluentAvalonia:Frame x:Name="LibraryFrame" />
-        </TabItem>
-        <TabItem Header="Browse">
-          <Label Content="TODO, maybe connect to github"/>
-        </TabItem>
-      </TabControl>
-    </Grid>
+  <Panel Background="{DynamicResource AcrylicFallbackColor}">
+    <TabControl>
+      <TabItem Header="Library">
+        <ContentControl x:Name="libraryContent"/>
+      </TabItem>
+      <TabItem>
+        <ContentControl x:Name="testContent"/>
+      </TabItem>
+    </TabControl>
   </Panel>
 </Window>
